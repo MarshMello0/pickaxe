@@ -13,3 +13,5 @@ offset_top = 218.0
 offset_right = 802.0
 offset_bottom = 366.0
 text = "Play"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="LoadGame"]
