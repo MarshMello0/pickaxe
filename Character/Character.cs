@@ -26,16 +26,38 @@ public partial class Character : RigidBody3D
 		else
 		{
 			var pos = GetMouseWorldPosition() - _offset;
-			GlobalPosition = new Vector3(pos.X, pos.Y, 0);;
+			//GlobalPosition = new Vector3(pos.X, pos.Y, 0);
 			_mouseMarker.GlobalPosition = _armStuckPosition;
 
-			var distance = _armStuckPosition.DistanceTo(GlobalPosition);
-			if (distance > _armLength)
-			{
-				var direction = (_armStuckPosition - GlobalPosition).Normalized();
-				GlobalPosition = _armStuckPosition - direction * _armLength;
-			}
+			//var distance = _armStuckPosition.DistanceTo(GlobalPosition);
+			//if (distance > _armLength)
+			//{
+			//	var direction = (_armStuckPosition - GlobalPosition).Normalized();
+			//	GlobalPosition = _armStuckPosition - direction * _armLength;
+			//}
 		}
+	}
+
+	public override void _IntegrateForces(PhysicsDirectBodyState3D state)
+	{
+		base._IntegrateForces(state);
+
+		if (!_isStuck)
+		{
+			return;
+		}
+
+		var target = GetMouseWorldPosition() - _offset;
+		target.Z = 0;
+
+		var position = state.Transform.Origin;
+		var displacement = target - position;
+
+		var stiffness = 80.0f;
+		var damping = 12.0f;
+
+		var force = displacement * stiffness - state.LinearVelocity * damping;
+		ApplyCentralForce(force);
 	}
 
 	private Vector3 GetMouseWorldPosition()
