@@ -8,6 +8,9 @@ size = Vector3(7.5722656, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bareo"]
 size = Vector3(7.564453, 1, 1)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_p74uo"]
+size = Vector3(38.23047, 10.411133, 4.1191406)
+
 [node name="Game" type="Node3D" unique_id=441774399]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=281661605]
@@ -38,4 +41,18 @@ shape = SubResource("BoxShape3D_bareo")
 transform = Transform3D(1, 0, 0, 0, 0.7892974, 0.6140111, 0, -0.6140111, 0.7892974, 0, 0, 4.068297)
 
 [node name="Ben" parent="." unique_id=1744000515 instance=ExtResource("1_l1rk1")]
-transform = Transform3D(-4.371139e-08, 0, 1.1210359, 0, 1.138339, 0, -1, 0, -4.9002036e-08, 0, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=39269051]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1928804)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2128728379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5595703)
+shape = SubResource("BoxShape3D_p74uo")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=839354729]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.334771)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=205381538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5595703)
+shape = SubResource("BoxShape3D_p74uo")
