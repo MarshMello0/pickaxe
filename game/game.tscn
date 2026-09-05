@@ -2,6 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://bjtv0d5lobmam" path="res://player/player.scn" id="1_l1rk1"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_bareo"]
+size = Vector3(7.5722656, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bareo"]
+size = Vector3(7.564453, 1, 1)
+
 [node name="Game" type="Node3D" unique_id=441774399]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=281661605]
@@ -10,13 +16,26 @@ projection = 1
 fov = 168.8
 size = 4.0462956
 
-[node name="SomeGround" type="CSGBox3D" parent="." unique_id=926264762]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.733, 0)
-size = Vector3(9.208984, 1, 1)
+[node name="SomeGround" type="MeshInstance3D" parent="." unique_id=593452458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.163655, 0)
+mesh = SubResource("BoxMesh_bareo")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="SomeGround" unique_id=172080362]
-transform = Transform3D(0.7216402, 0.69226825, 0, -0.69226825, 0.7216402, 0, 0, 0, 1, 2.664421, 0.92896223, -0.08481532)
-size = Vector3(1.8393555, 3.4882813, 1)
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround" unique_id=121728417]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround/StaticBody3D" unique_id=1001271295]
+shape = SubResource("BoxShape3D_bareo")
+
+[node name="SomeGround2" type="MeshInstance3D" parent="." unique_id=1268708285]
+transform = Transform3D(0.8648996, -0.5019449, 0, 0.5019449, 0.8648996, 0, 0, 0, 1, 4.4840693, -0.6821929, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround2" unique_id=974644141]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround2/StaticBody3D" unique_id=1109109715]
+shape = SubResource("BoxShape3D_bareo")
 
 [node name="Player" parent="." unique_id=565916640 instance=ExtResource("1_l1rk1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7662904, 0.77473295, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=466275924]
+transform = Transform3D(1, 0, 0, 0, 0.7892974, 0.6140111, 0, -0.6140111, 0.7892974, 0, 0, 4.068297)
