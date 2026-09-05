@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bhe45w60myiv1"]
+
+[ext_resource type="Script" uid="uid://slakvxoluday" path="res://main-menu/MainMenu.cs" id="1_hsegp"]
+
+[node name="Main" type="Node3D" unique_id=1635706713]
+script = ExtResource("1_hsegp")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=171932836]
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1529645991]
+offset_left = 528.0
+offset_top = 218.0
+offset_right = 802.0
+offset_bottom = 366.0
+text = "Play"
