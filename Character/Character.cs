@@ -23,19 +23,6 @@ public partial class Character : RigidBody3D
 			var pos = GetMouseWorldPosition();
 			_mouseMarker.GlobalPosition = new Vector3(pos.X, pos.Y, 0);
 		}
-		else
-		{
-			var pos = GetMouseWorldPosition() - _offset;
-			//GlobalPosition = new Vector3(pos.X, pos.Y, 0);
-			_mouseMarker.GlobalPosition = _armStuckPosition;
-
-			//var distance = _armStuckPosition.DistanceTo(GlobalPosition);
-			//if (distance > _armLength)
-			//{
-			//	var direction = (_armStuckPosition - GlobalPosition).Normalized();
-			//	GlobalPosition = _armStuckPosition - direction * _armLength;
-			//}
-		}
 	}
 
 	public override void _IntegrateForces(PhysicsDirectBodyState3D state)
