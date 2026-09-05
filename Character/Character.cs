@@ -23,6 +23,10 @@ public partial class Character : RigidBody3D
 			var pos = GetMouseWorldPosition();
 			_mouseMarker.GlobalPosition = new Vector3(pos.X, pos.Y, 0);
 		}
+		else
+		{
+			_mouseMarker.GlobalPosition = _armStuckPosition;
+		}
 	}
 
 	public override void _IntegrateForces(PhysicsDirectBodyState3D state)
@@ -82,15 +86,11 @@ public partial class Character : RigidBody3D
 
 	public void Stick(Node3D node)
 	{
-		if (_isStuck)
-			return;
 		_canStick = true;
 	}
 
 	public void UnStick(Node3D node)
 	{
-		if (_isStuck)
-			return;
 		_canStick = false;
 	}
 }
