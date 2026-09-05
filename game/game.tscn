@@ -21,6 +21,12 @@ size = Vector3(7.5722656, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bareo"]
 size = Vector3(7.564453, 1, 1)
 
+[sub_resource type="BoxMesh" id="BoxMesh_dxrkv"]
+size = Vector3(39.785156, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dxrkv"]
+size = Vector3(39.77246, 1, 1)
+
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_l1rk1"]
 
 [node name="Game" type="Node3D" unique_id=441774399]
@@ -61,6 +67,24 @@ mesh = SubResource("BoxMesh_bareo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround/StaticBody3D" unique_id=1001271295]
 shape = SubResource("BoxShape3D_bareo")
 
+[node name="SomeGround3" type="MeshInstance3D" parent="." unique_id=856492839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.369522, -2.163655, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround3" unique_id=185186432]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround3/StaticBody3D" unique_id=1185800241]
+shape = SubResource("BoxShape3D_bareo")
+
+[node name="SomeGround4" type="MeshInstance3D" parent="." unique_id=393821903]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, -10.820148, 1.1084676, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround4" unique_id=66468393]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround4/StaticBody3D" unique_id=1839723749]
+shape = SubResource("BoxShape3D_bareo")
+
 [node name="SomeGround2" type="MeshInstance3D" parent="." unique_id=1268708285]
 transform = Transform3D(0.8648996, -0.5019449, 0, 0.5019449, 0.8648996, 0, 0, 0, 1, 4.4840693, -0.6821929, 0)
 mesh = SubResource("BoxMesh_bareo")
@@ -68,6 +92,96 @@ mesh = SubResource("BoxMesh_bareo")
 [node name="StaticBody3D" type="StaticBody3D" parent="SomeGround2" unique_id=974644141]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround2/StaticBody3D" unique_id=1109109715]
+shape = SubResource("BoxShape3D_bareo")
+
+[node name="SomeGround5" type="MeshInstance3D" parent="." unique_id=402149876]
+transform = Transform3D(0.95912766, 0.28297374, 0, -0.28297374, 0.95912766, 0, 0, 0, 1, 10.969247, 0.05258131, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround5" unique_id=319552356]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround5/StaticBody3D" unique_id=3313277]
+shape = SubResource("BoxShape3D_bareo")
+
+[node name="SomeGround6" type="MeshInstance3D" parent="." unique_id=109406142]
+transform = Transform3D(0.9556456, -0.294519, 0, 0.294519, 0.9556456, 0, 0, 0, 1, 17.872118, -0.09162092, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround6" unique_id=1508345759]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround6/StaticBody3D" unique_id=1781988896]
+shape = SubResource("BoxShape3D_bareo")
+
+[node name="SomeGround7" type="MeshInstance3D" parent="." unique_id=1877488821]
+transform = Transform3D(0.5181047, -0.85531723, 0, 0.85531723, 0.5181047, 0, 0, 0, 1, 23.26085, 4.121027, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround7" unique_id=440983582]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround7/StaticBody3D" unique_id=1495001342]
+shape = SubResource("BoxShape3D_bareo")
+
+[node name="SomeGround8" type="MeshInstance3D" parent="." unique_id=1532210589]
+transform = Transform3D(0.5181047, -0.85531723, 0, 0.85531723, 0.5181047, 0, 0, 0, 1, 26.958948, 10.346643, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround8" unique_id=161856269]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround8/StaticBody3D" unique_id=1168004305]
+shape = SubResource("BoxShape3D_bareo")
+
+[node name="SomeGround10" type="MeshInstance3D" parent="." unique_id=339571653]
+transform = Transform3D(0.3555191, 0.934669, 0, -0.934669, 0.3555191, 0, 0, 0, 1, 30.049212, 10.039622, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround10" unique_id=1497100883]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround10/StaticBody3D" unique_id=1019020928]
+shape = SubResource("BoxShape3D_bareo")
+
+[node name="SomeGround11" type="MeshInstance3D" parent="." unique_id=1565062424]
+transform = Transform3D(0.3555191, 0.934669, 0, -0.934669, 0.3555191, 0, 0, 0, 1, 32.60994, 3.246406, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround11" unique_id=445550401]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround11/StaticBody3D" unique_id=737250274]
+shape = SubResource("BoxShape3D_bareo")
+
+[node name="SomeGround12" type="MeshInstance3D" parent="." unique_id=523098323]
+transform = Transform3D(0.3555191, 0.934669, 0, -0.934669, 0.3555191, 0, 0, 0, 1, 35.24578, -3.8106189, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround12" unique_id=1349934931]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround12/StaticBody3D" unique_id=1260857327]
+shape = SubResource("BoxShape3D_bareo")
+
+[node name="SomeGround13" type="MeshInstance3D" parent="." unique_id=341118334]
+transform = Transform3D(0.3555191, 0.934669, 0, -0.934669, 0.3555191, 0, 0, 0, 1, 38.054604, -11.241475, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround13" unique_id=1272373758]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround13/StaticBody3D" unique_id=1533548836]
+shape = SubResource("BoxShape3D_bareo")
+
+[node name="SomeGround14" type="MeshInstance3D" parent="." unique_id=1505164521]
+transform = Transform3D(0.9999143, 0.013089925, 0, -0.013089925, 0.9999143, 0, 0, 0, 1, 59.227398, -15.039565, 0)
+mesh = SubResource("BoxMesh_dxrkv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround14" unique_id=210981578]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround14/StaticBody3D" unique_id=1722724447]
+shape = SubResource("BoxShape3D_dxrkv")
+
+[node name="SomeGround9" type="MeshInstance3D" parent="." unique_id=314551230]
+transform = Transform3D(0.5181047, -0.85531723, 0, 0.85531723, 0.5181047, 0, 0, 0, 1, 35.439552, 24.675045, 0)
+mesh = SubResource("BoxMesh_bareo")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="SomeGround9" unique_id=837096822]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround9/StaticBody3D" unique_id=660939917]
 shape = SubResource("BoxShape3D_bareo")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=466275924]
