@@ -8,15 +8,13 @@ size = Vector3(7.5722656, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bareo"]
 size = Vector3(7.564453, 1, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_p74uo"]
-size = Vector3(38.23047, 10.411133, 4.1191406)
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_l1rk1"]
 
 [node name="Game" type="Node3D" unique_id=441774399]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=281661605]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5937443)
 projection = 1
-fov = 168.8
 size = 4.0462956
 
 [node name="SomeGround" type="MeshInstance3D" parent="." unique_id=593452458]
@@ -40,19 +38,14 @@ shape = SubResource("BoxShape3D_bareo")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=466275924]
 transform = Transform3D(1, 0, 0, 0, 0.7892974, 0.6140111, 0, -0.6140111, 0.7892974, 0, 0, 4.068297)
 
-[node name="Ben" parent="." unique_id=1744000515 instance=ExtResource("1_l1rk1")]
+[node name="Ben" parent="." unique_id=1744000515 node_paths=PackedStringArray("_targetBodyPosition", "_springArm3D", "_originalParent") instance=ExtResource("1_l1rk1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+_targetBodyPosition = NodePath("../Marker3D")
+_springArm3D = NodePath("../Marker3D/SpringArm3D")
+_originalParent = NodePath("..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=39269051]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.1928804)
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1505566133]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2128728379]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5595703)
-shape = SubResource("BoxShape3D_p74uo")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=839354729]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.334771)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=205381538]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5595703)
-shape = SubResource("BoxShape3D_p74uo")
+[node name="SpringArm3D" type="SpringArm3D" parent="Marker3D" unique_id=1883560766]
+collision_mask = 2
+shape = SubResource("SeparationRayShape3D_l1rk1")

@@ -2,7 +2,6 @@ using Godot;
 
 public partial class Character : RigidBody3D
 {
-	[Export] private PinJoint3D _pinJoint;
 	[Export] private Skeleton3D _skeleton;
 	[Export] private Fabrik3D _ik;
 	[Export] private Marker3D _mouseMarker;
@@ -76,14 +75,13 @@ public partial class Character : RigidBody3D
 	{
 		if (_isStuck)
 			return;
-
-		GD.Print($"Body entered: {node.Name}");
 		_canStick = true;
 	}
 
 	public void UnStick(Node3D node)
 	{
-		GD.Print($"Body exited: {node.Name}");
+		if (_isStuck)
+			return;
 		_canStick = false;
 	}
 }

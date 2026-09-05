@@ -120,9 +120,8 @@ blend_shape_mode = 0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p74uo"]
 
-[node name="BenRigidbody" type="RigidBody3D" unique_id=469484301 node_paths=PackedStringArray("_pinJoint", "_skeleton", "_ik", "_mouseMarker")]
+[node name="BenRigidbody" type="RigidBody3D" unique_id=469484301 node_paths=PackedStringArray("_skeleton", "_ik", "_mouseMarker")]
 script = ExtResource("1_fql8p")
-_pinJoint = NodePath("Mesh/Untitled/Armature/Skeleton3D/BoneAttachment3D/PinJoint3D")
 _skeleton = NodePath("Mesh/Untitled/Armature/Skeleton3D")
 _ik = NodePath("Mesh/Untitled/Armature/Skeleton3D/Ik")
 _mouseMarker = NodePath("MouseTarget")
@@ -257,13 +256,9 @@ settings/0/joints/4/rotation_axis = 3
 settings/0/joints/4/limitation = null
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Mesh/Untitled/Armature/Skeleton3D" unique_id=397216490]
-transform = Transform3D(0.99986744, -0.01628045, 7.537782e-08, 0.01628045, 0.99986744, -6.158669e-08, -7.4365175e-08, 6.280572e-08, 1, -0.06761969, 3.3215332, 1.4801103e-08)
+transform = Transform3D(0.99803346, -0.06268334, 6.71394e-08, 0.06268334, 0.99803346, 1.8514854e-07, -7.8613105e-08, -1.8057592e-07, 1, -0.067569986, 3.319964, 9.268035e-10)
 bone_name = "Bone.004"
 bone_idx = 4
-
-[node name="PinJoint3D" type="PinJoint3D" parent="Mesh/Untitled/Armature/Skeleton3D/BoneAttachment3D" unique_id=1399793081]
-transform = Transform3D(1, 7.549791e-08, -7.5497894e-08, -7.549791e-08, 1, 1.4359973e-07, 7.549791e-08, -1.435997e-07, 1, 0, 0, 0)
-node_a = NodePath("../../../../../..")
 
 [node name="Area3D" type="Area3D" parent="Mesh/Untitled/Armature/Skeleton3D/BoneAttachment3D" unique_id=956088940]
 transform = Transform3D(1, 7.549791e-08, -7.5497894e-08, -7.549791e-08, 1, 1.4359973e-07, 7.549791e-08, -1.435997e-07, 1, 0, 0, 0)
