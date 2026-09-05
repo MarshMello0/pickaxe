@@ -120,13 +120,16 @@ blend_shape_mode = 0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p74uo"]
 
-[node name="BenRigidbody" type="RigidBody3D" unique_id=469484301 node_paths=PackedStringArray("_pinJoint", "_mouseMarker")]
+[node name="BenRigidbody" type="RigidBody3D" unique_id=469484301 node_paths=PackedStringArray("_pinJoint", "_skeleton", "_ik", "_mouseMarker")]
 script = ExtResource("1_fql8p")
 _pinJoint = NodePath("Mesh/Untitled/Armature/Skeleton3D/BoneAttachment3D/PinJoint3D")
+_skeleton = NodePath("Mesh/Untitled/Armature/Skeleton3D")
+_ik = NodePath("Mesh/Untitled/Armature/Skeleton3D/Ik")
 _mouseMarker = NodePath("MouseTarget")
+_armLength = 2.278
 
 [node name="MouseTarget" type="Marker3D" parent="." unique_id=2033634168]
-transform = Transform3D(1, 0, 0, 0, 1.1383389, 0, 0, 0, 1.1210357, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1.1383389, 0, 0, 0, 1.1210357, -2.2778387, -0.039045155, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1314611674]
 shape = SubResource("SphereShape3D_bareo")
@@ -232,8 +235,8 @@ mesh = SubResource("ArrayMesh_atthe")
 skin = SubResource("Skin_5uvhp")
 skeleton = NodePath("..")
 
-[node name="FABRIK3D" type="FABRIK3D" parent="Mesh/Untitled/Armature/Skeleton3D" unique_id=1587591984]
-transform = Transform3D(1.1383389, 0, 0, 0, 1, 0, 0, 0, 1.1210358, -1.755372, 0.73675597, -0.11242819)
+[node name="Ik" type="FABRIK3D" parent="Mesh/Untitled/Armature/Skeleton3D" unique_id=1587591984]
+transform = Transform3D(1.138339, 0, 0, 0, 1, 0, 0, 0, 1.1210358, 0, 0, 0)
 setting_count = 1
 settings/0/target_node = NodePath("../../../../../MouseTarget")
 settings/0/root_bone_name = "Bone"
@@ -254,7 +257,7 @@ settings/0/joints/4/rotation_axis = 3
 settings/0/joints/4/limitation = null
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Mesh/Untitled/Armature/Skeleton3D" unique_id=397216490]
-transform = Transform3D(1, -7.54979e-08, 7.549791e-08, 7.549791e-08, 1, -1.4359972e-07, -7.5497894e-08, 1.4359972e-07, 1, -1.7531245e-07, 3.322084, 3.5037394e-07)
+transform = Transform3D(0.99986744, -0.01628045, 7.537782e-08, 0.01628045, 0.99986744, -6.158669e-08, -7.4365175e-08, 6.280572e-08, 1, -0.06761969, 3.3215332, 1.4801103e-08)
 bone_name = "Bone.004"
 bone_idx = 4
 

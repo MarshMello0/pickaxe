@@ -3,9 +3,10 @@ using Godot;
 public partial class Character : RigidBody3D
 {
 	[Export] private PinJoint3D _pinJoint;
-
-	[ExportGroup("Targets")]
+	[Export] private Skeleton3D _skeleton;
+	[Export] private Fabrik3D _ik;
 	[Export] private Marker3D _mouseMarker;
+	[Export] private float _armLength = 1.0f;
 
 	private Viewport _viewport;
 	private Camera3D _camera;
@@ -28,6 +29,13 @@ public partial class Character : RigidBody3D
 			var pos = GetMouseWorldPosition() - _offset;
 			GlobalPosition = new Vector3(pos.X, pos.Y, 0);;
 			_mouseMarker.GlobalPosition = _armStuckPosition;
+
+			var distance = _armStuckPosition.DistanceTo(GlobalPosition);
+			if (distance > _armLength)
+			{
+				var direction = (_armStuckPosition - GlobalPosition).Normalized();
+				GlobalPosition = _armStuckPosition - direction * _armLength;
+			}
 		}
 	}
 
