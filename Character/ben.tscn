@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cnacb1xs0xe06"]
 
+[ext_resource type="Script" uid="uid://bf4mweelvshvw" path="res://Character/Character.cs" id="1_fql8p"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_0qcug"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4vgrw"]
@@ -13,6 +15,7 @@
 [node name="Ben" type="MeshInstance3D" unique_id=1744000515]
 transform = Transform3D(1, 0, 0, 0, 1.138339, 0, 0, 0, 1.1210359, 0, 0, 0)
 mesh = SubResource("SphereMesh_0qcug")
+script = ExtResource("1_fql8p")
 
 [node name="RightShoulder" type="MeshInstance3D" parent="." unique_id=777597957]
 transform = Transform3D(0.099999994, 0, 0, 0, -4.3711377e-09, -0.09999998, 0, 0.09999994, -4.371138e-09, 0, 0.13, 0.5)
