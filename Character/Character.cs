@@ -74,6 +74,9 @@ public partial class Character : RigidBody3D
 
 	public void Stick(Node3D node)
 	{
+		if (_isStuck)
+			return;
+
 		GD.Print($"Body entered: {node.Name}");
 		_canStick = true;
 	}
