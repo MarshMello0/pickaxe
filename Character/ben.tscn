@@ -23,6 +23,7 @@ _leftArmMarker = NodePath("LeftArmTarget")
 
 [node name="RightShoulder" type="MeshInstance3D" parent="." unique_id=777597957]
 transform = Transform3D(0.099999994, 0, 0, 0, -4.3711377e-09, -0.09999998, 0, 0.09999994, -4.371138e-09, 0, 0.13, 0.5)
+visible = false
 mesh = SubResource("SphereMesh_4vgrw")
 
 [node name="RightUpperArm" type="MeshInstance3D" parent="RightShoulder" unique_id=71020125]
@@ -39,6 +40,7 @@ mesh = SubResource("CapsuleMesh_61mag")
 
 [node name="LeftShoulder2" type="MeshInstance3D" parent="." unique_id=1167098349]
 transform = Transform3D(-0.099999994, -8.742273e-09, 3.82137e-16, 0, -3.839925e-09, -0.08784727, 7.798391e-09, -0.08920315, 3.899195e-09, 0, 0.13, -0.5)
+visible = false
 mesh = SubResource("SphereMesh_4vgrw")
 
 [node name="LeftUpperArm" type="MeshInstance3D" parent="LeftShoulder2" unique_id=743748426]
