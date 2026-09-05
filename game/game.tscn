@@ -188,7 +188,7 @@ shape = SubResource("BoxShape3D_bareo")
 transform = Transform3D(1, 0, 0, 0, 0.7892974, 0.6140111, 0, -0.6140111, 0.7892974, 0, 0, 4.068297)
 
 [node name="Ben" parent="." unique_id=1744000515 instance=ExtResource("1_l1rk1")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1505566133]
 

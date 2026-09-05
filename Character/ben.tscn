@@ -116,6 +116,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
+[sub_resource type="JointLimitationCone3D" id="JointLimitationCone3D_ts7x6"]
+angle = 0.4441863
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_p74uo"]
 radius = 1.5972477
 
@@ -244,7 +247,9 @@ settings/0/end_bone = 4
 settings/0/extend_end_bone = false
 settings/0/joint_count = 5
 settings/0/joints/0/rotation_axis = 3
-settings/0/joints/0/limitation = null
+settings/0/joints/0/limitation = SubResource("JointLimitationCone3D_ts7x6")
+settings/0/joints/0/limitation/right_axis = 0
+settings/0/joints/0/limitation/rotation_offset = Quaternion(0, 0, 0, 1)
 settings/0/joints/1/rotation_axis = 3
 settings/0/joints/1/limitation = null
 settings/0/joints/2/rotation_axis = 3
@@ -255,7 +260,7 @@ settings/0/joints/4/rotation_axis = 3
 settings/0/joints/4/limitation = null
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Mesh/Untitled/Armature/Skeleton3D" unique_id=397216490]
-transform = Transform3D(0.99803346, -0.06268334, 6.71394e-08, 0.06268334, 0.99803346, 1.8514854e-07, -7.8613105e-08, -1.8057592e-07, 1, -0.067569986, 3.319964, 9.268035e-10)
+transform = Transform3D(0.99912924, -0.041722786, 7.713612e-08, 0.041722786, 0.99912924, -5.597371e-08, -7.473358e-08, 5.91433e-08, 1, -0.067747146, 3.3207376, -2.6606273e-11)
 bone_name = "Bone.004"
 bone_idx = 4
 
