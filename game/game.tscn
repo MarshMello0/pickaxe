@@ -1,3 +1,22 @@
 [gd_scene format=3 uid="uid://btet4emmmn3aj"]
 
+[ext_resource type="PackedScene" uid="uid://bjtv0d5lobmam" path="res://player/player.scn" id="1_l1rk1"]
+
 [node name="Game" type="Node3D" unique_id=441774399]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=281661605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5937443)
+projection = 1
+fov = 168.8
+size = 4.0462956
+
+[node name="SomeGround" type="CSGBox3D" parent="." unique_id=926264762]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.733, 0)
+size = Vector3(9.208984, 1, 1)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SomeGround" unique_id=172080362]
+transform = Transform3D(0.7216402, 0.69226825, 0, -0.69226825, 0.7216402, 0, 0, 0, 1, 2.664421, 0.92896223, -0.08481532)
+size = Vector3(1.8393555, 3.4882813, 1)
+
+[node name="Player" parent="." unique_id=565916640 instance=ExtResource("1_l1rk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7662904, 0.77473295, 0)
