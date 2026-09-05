@@ -28,3 +28,5 @@ Thumbs.db
 # NuGet packages
 *.nupkg
 packages/
+
+project_time_tracker.json
