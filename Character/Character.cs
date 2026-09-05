@@ -38,14 +38,26 @@ public partial class Character : RigidBody3D
 			return;
 		}
 
+		var stiffness = 80.0f;
+		var damping = 12.0f;
+
+		var position = state.Transform.Origin;
+		var distanceFromArm = (position - _armStuckPosition).Length();
+
+		if (distanceFromArm > _armLength)
+		{
+			// Needs to spring back to the arm position
+			var direction = (position - _armStuckPosition).Normalized();
+			var maxTarget = _armStuckPosition + direction * _armLength;
+			var maxDisplacement = maxTarget - position;
+			ApplyCentralForce(maxDisplacement * stiffness - state.LinearVelocity * damping);
+			return;
+		}
+
 		var target = GetMouseWorldPosition() - _offset;
 		target.Z = 0;
 
-		var position = state.Transform.Origin;
 		var displacement = target - position;
-
-		var stiffness = 80.0f;
-		var damping = 12.0f;
 
 		var force = displacement * stiffness - state.LinearVelocity * damping;
 		ApplyCentralForce(force);
