@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://btet4emmmn3aj"]
 
-[ext_resource type="PackedScene" uid="uid://bjtv0d5lobmam" path="res://player/player.scn" id="1_l1rk1"]
+[ext_resource type="PackedScene" uid="uid://cnacb1xs0xe06" path="res://Character/ben.tscn" id="1_l1rk1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_bareo"]
 size = Vector3(7.5722656, 1, 1)
@@ -34,8 +34,8 @@ mesh = SubResource("BoxMesh_bareo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SomeGround2/StaticBody3D" unique_id=1109109715]
 shape = SubResource("BoxShape3D_bareo")
 
-[node name="Player" parent="." unique_id=565916640 instance=ExtResource("1_l1rk1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7662904, 0.77473295, 0)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=466275924]
 transform = Transform3D(1, 0, 0, 0, 0.7892974, 0.6140111, 0, -0.6140111, 0.7892974, 0, 0, 4.068297)
+
+[node name="Ben" parent="." unique_id=1744000515 instance=ExtResource("1_l1rk1")]
+transform = Transform3D(-4.371139e-08, 0, 1.1210359, 0, 1.138339, 0, -1, 0, -4.9002036e-08, 0, 0, 0)
