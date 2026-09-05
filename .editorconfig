@@ -9,7 +9,7 @@ trim_trailing_whitespace = true
 # Code files
 [*.{cs,csx,vb,vbx}]
 indent_size = 4
-indent_style = space
+indent_style = tab
 
 # C# files
 [*.cs]
