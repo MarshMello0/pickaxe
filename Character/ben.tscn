@@ -117,6 +117,7 @@ _surfaces = [{
 blend_shape_mode = 0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p74uo"]
+radius = 1.5972477
 
 [node name="BenRigidbody" type="RigidBody3D" unique_id=469484301 node_paths=PackedStringArray("_skeleton", "_ik", "_mouseMarker")]
 can_sleep = false
