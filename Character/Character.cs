@@ -14,7 +14,7 @@ public partial class Character : MeshInstance3D
 	{
 		base._Process(delta);
 		var pos = GetMouseWorldPosition();
-		_mouseMarker.GlobalPosition = pos;
+		_mouseMarker.GlobalPosition = new Vector3(pos.X, pos.Y, 0);
 	}
 
 	private Vector3 GetMouseWorldPosition()
