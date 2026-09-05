@@ -1,15 +1,28 @@
 using Godot;
-using System;
 
 public partial class Character : MeshInstance3D
 {
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-	}
+	[ExportGroup("Targets")]
+	[Export] private Marker3D _mouseMarker;
+	[Export] private Marker3D _rightArmMarker;
+	[Export] private Marker3D _leftArmMarker;
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	private Viewport _viewport;
+	private Camera3D _camera;
+
 	public override void _Process(double delta)
 	{
+		base._Process(delta);
+		var pos = GetMouseWorldPosition();
+		_mouseMarker.GlobalPosition = pos;
+	}
+
+	private Vector3 GetMouseWorldPosition()
+	{
+		_viewport ??= GetViewport();
+		_camera ??= _viewport.GetCamera3D();
+
+		var pos = _viewport.GetMousePosition();
+		return _camera.ProjectPosition(pos, 0);
 	}
 }
