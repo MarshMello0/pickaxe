@@ -16,6 +16,10 @@ config/name="pickaxe"
 run/main_scene="res://main-menu/main.tscn"
 config/features=PackedStringArray("4.7", "C#")
 
+[autoload]
+
+PhantomCameraManager="*uid://duq6jhf6unyis"
+
 [display]
 
 window/size/viewport_width=1280
@@ -24,3 +28,7 @@ window/size/viewport_height=720
 [dotnet]
 
 project/assembly_name="pickaxe"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/phantom_camera/plugin.cfg", "res://addons/project-time-tracker/plugin.cfg")
