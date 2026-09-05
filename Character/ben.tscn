@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cnacb1xs0xe06"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_0qcug"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4vgrw"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_poa2x"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_n6toe"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_61mag"]
+
+[node name="Ben" type="MeshInstance3D" unique_id=1744000515]
+transform = Transform3D(1, 0, 0, 0, 1.138339, 0, 0, 0, 1.1210359, 0, 0, 0)
+mesh = SubResource("SphereMesh_0qcug")
+
+[node name="RightShoulder" type="MeshInstance3D" parent="." unique_id=777597957]
+transform = Transform3D(0.099999994, 0, 0, 0, -4.3711377e-09, -0.09999998, 0, 0.09999994, -4.371138e-09, 0, 0.13, 0.5)
+mesh = SubResource("SphereMesh_4vgrw")
+
+[node name="RightUpperArm" type="MeshInstance3D" parent="RightShoulder" unique_id=71020125]
+transform = Transform3D(1.9999999, 0, 0, 0, 3.166994, 0, 0, 1.4210855e-14, 1.9999999, 3.5527137e-14, 3.0634913, -0.018060684)
+mesh = SubResource("CapsuleMesh_poa2x")
+
+[node name="RightElbow" type="MeshInstance3D" parent="RightShoulder/RightUpperArm" unique_id=721723060]
+transform = Transform3D(0.5, 0, 0, 0, 0.31575692, 8.881784e-16, 0, -3.5527137e-15, 0.50000006, 2.9802322e-07, 1.0096216, 0.034071922)
+mesh = SubResource("SphereMesh_n6toe")
+
+[node name="RightLowerArm" type="MeshInstance3D" parent="RightShoulder/RightUpperArm/RightElbow" unique_id=218926785]
+transform = Transform3D(1.75, 0, 0, 0, 2.7699993, -7.1054274e-15, 0, -4.2632564e-14, 1.7499998, -5.9604645e-07, 2.746809, -0.0035991669)
+mesh = SubResource("CapsuleMesh_61mag")
+
+[node name="LeftShoulder2" type="MeshInstance3D" parent="." unique_id=1167098349]
+transform = Transform3D(-0.099999994, -8.742273e-09, 3.82137e-16, 0, -3.839925e-09, -0.08784727, 7.798391e-09, -0.08920315, 3.899195e-09, 0, 0.13, -0.5)
+mesh = SubResource("SphereMesh_4vgrw")
+
+[node name="LeftUpperArm" type="MeshInstance3D" parent="LeftShoulder2" unique_id=743748426]
+transform = Transform3D(1.9999999, 0, 0, 0, 3.166994, 0, 0, 1.4210855e-14, 1.9999999, 3.5527137e-14, 3.0634913, -0.018060684)
+mesh = SubResource("CapsuleMesh_poa2x")
+
+[node name="LeftElbow" type="MeshInstance3D" parent="LeftShoulder2/LeftUpperArm" unique_id=224462500]
+transform = Transform3D(0.5, 0, 0, 0, 0.31575692, 8.881784e-16, 0, -3.5527137e-15, 0.50000006, 2.9802322e-07, 1.0096216, 0.034071922)
+mesh = SubResource("SphereMesh_n6toe")
+
+[node name="LeftLowerArm" type="MeshInstance3D" parent="LeftShoulder2/LeftUpperArm/LeftElbow" unique_id=834406913]
+transform = Transform3D(1.75, 0, 0, 0, 2.7699993, -7.1054274e-15, 0, -4.2632564e-14, 1.7499998, -5.9604645e-07, 2.746809, -0.0035991669)
+mesh = SubResource("CapsuleMesh_61mag")

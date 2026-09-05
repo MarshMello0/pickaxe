@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ogmvb7j1etqq"]
+
+[ext_resource type="PackedScene" uid="uid://cnacb1xs0xe06" path="res://Character/ben.tscn" id="1_61mag"]
+
+[node name="Greg" type="Node3D" unique_id=1476231543]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1125870324]
+transform = Transform3D(8.6527195, 0, 0, 0, 0.23794079, 0, 0, 0, 7.145426, 0, 0, 0.048446476)
+
+[node name="Ben" parent="." unique_id=1744000515 instance=ExtResource("1_61mag")]
+transform = Transform3D(1, 0, 0, 0, 1.138339, 0, 0, 0, 1.1210359, 0, 2.25, 0)
