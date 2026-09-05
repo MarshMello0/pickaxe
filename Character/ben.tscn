@@ -5,8 +5,6 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_bareo"]
 radius = 0.60233563
 
-[sub_resource type="SphereMesh" id="SphereMesh_0qcug"]
-
 [sub_resource type="SphereMesh" id="SphereMesh_4vgrw"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_poa2x"]
@@ -135,7 +133,6 @@ shape = SubResource("SphereShape3D_bareo")
 
 [node name="Mesh" type="MeshInstance3D" parent="." unique_id=1744000515]
 transform = Transform3D(1, 0, 0, 0, 1.138339, 0, 0, 0, 1.1210359, 0, 0, 0)
-mesh = SubResource("SphereMesh_0qcug")
 
 [node name="RightShoulder" type="MeshInstance3D" parent="Mesh" unique_id=777597957]
 transform = Transform3D(0.099999994, 0, 0, 0, -4.3711377e-09, -0.09999998, 0, 0.09999994, -4.371138e-09, 0, 0.13, 0.5)
