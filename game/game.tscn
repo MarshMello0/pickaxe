@@ -1,6 +1,19 @@
 [gd_scene format=3 uid="uid://btet4emmmn3aj"]
 
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_4fuuu"]
 [ext_resource type="PackedScene" uid="uid://cnacb1xs0xe06" path="res://Character/ben.tscn" id="1_l1rk1"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_dxrkv"]
+[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="3_dakft"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_dxrkv"]
+
+[sub_resource type="Resource" id="Resource_u5opy"]
+script = ExtResource("2_dxrkv")
+
+[sub_resource type="Resource" id="Resource_bareo"]
+script = ExtResource("3_dakft")
+projection = 1
+size = 8.613999999999999
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
 [sub_resource type="BoxMesh" id="BoxMesh_bareo"]
 size = Vector3(7.5722656, 1, 1)
@@ -12,10 +25,32 @@ size = Vector3(7.564453, 1, 1)
 
 [node name="Game" type="Node3D" unique_id=441774399]
 
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=1827640481 node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+top_level = true
+script = ExtResource("1_4fuuu")
+follow_mode = 5
+follow_target = NodePath("../Ben")
+tween_resource = SubResource("Resource_u5opy")
+camera_3d_resource = SubResource("Resource_bareo")
+follow_offset = Vector3(0, 0, 5)
+follow_damping = true
+align_transform_with_view = Callable()
+align_position_with_view = Callable()
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=281661605]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.5937443)
+physics_interpolation_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+top_level = true
 projection = 1
-size = 4.0462956
+size = 8.614
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1355491172]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("4_dxrkv")
+metadata/_custom_type_script = "uid://bd046eokvcnu2"
 
 [node name="SomeGround" type="MeshInstance3D" parent="." unique_id=593452458]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.163655, 0)
@@ -38,11 +73,8 @@ shape = SubResource("BoxShape3D_bareo")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=466275924]
 transform = Transform3D(1, 0, 0, 0, 0.7892974, 0.6140111, 0, -0.6140111, 0.7892974, 0, 0, 4.068297)
 
-[node name="Ben" parent="." unique_id=1744000515 node_paths=PackedStringArray("_targetBodyPosition", "_springArm3D", "_originalParent") instance=ExtResource("1_l1rk1")]
+[node name="Ben" parent="." unique_id=1744000515 instance=ExtResource("1_l1rk1")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
-_targetBodyPosition = NodePath("../Marker3D")
-_springArm3D = NodePath("../Marker3D/SpringArm3D")
-_originalParent = NodePath("..")
 
 [node name="Marker3D" type="Marker3D" parent="." unique_id=1505566133]
 
