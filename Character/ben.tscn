@@ -45,3 +45,11 @@ mesh = SubResource("SphereMesh_n6toe")
 [node name="LeftLowerArm" type="MeshInstance3D" parent="LeftShoulder2/LeftUpperArm/LeftElbow" unique_id=834406913]
 transform = Transform3D(1.75, 0, 0, 0, 2.7699993, -7.1054274e-15, 0, -4.2632564e-14, 1.7499998, -5.9604645e-07, 2.746809, -0.0035991669)
 mesh = SubResource("CapsuleMesh_61mag")
+
+[node name="RightArmTarget" type="Marker3D" parent="." unique_id=2041416284]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999998, 0, 0.11997551, 1.6267879)
+
+[node name="LeftArmTarget" type="Marker3D" parent="." unique_id=387651574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, -1.627)
+
+[node name="MouseTarget" type="Marker3D" parent="." unique_id=2033634168]
